@@ -4,6 +4,9 @@ services:
   webf1project:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=django-insecure-#_+o@*=gs$xo5h8n59f+j@&tuq%2c&rdq=e3(r1-g$a0tvj(s*
+      - DEBUG=1
     volumes:
       - .:/code
     ports:
