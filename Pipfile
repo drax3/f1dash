@@ -11,6 +11,7 @@ htmx = "*"
 fastf1 = "*"
 matplotlib = "*"
 pandas = "*"
+seaborn = "*"
 
 [dev-packages]
 

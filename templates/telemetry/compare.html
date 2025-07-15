@@ -1,0 +1,41 @@
+{% extends '_base.html'  %}
+    {% block extrahead %}
+<title>F1 Driver Comparison</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% endblock extrahead %}
+{% block content %}
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-xl">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">🚗 F1 Driver Telemetry Comparison</h1>
+
+        <form
+            hx-get="api/compare/"
+            hx-target="#result"
+            hx-trigger="submit"
+            class="space-y-4"
+        >
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Driver 1</label>
+                <input type="text" name="driver1" value="VER" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Driver 2</label>
+                <input type="text" name="driver2" value="LEC" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Race</label>
+                <input type="text" name="race" value="Monza" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required>
+            </div>
+
+            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition">Compare Now</button>
+        </form>
+
+        <div id="result" class="mt-6 text-center">
+            <!-- Graph will load here -->
+        </div>
+    </div>
+</body>
+{% endblock content %}

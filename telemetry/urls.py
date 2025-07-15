@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import CompareDriverDriverView, home
+from .views import CompareDriverDriverView, home, CompareDriverDriverViewV2
 
 urlpatterns = [
-    path('api/compare/', CompareDriverDriverView.as_view(), name='compare-drivers'),
+    path('api/compare/', CompareDriverDriverViewV2.as_view(), name='compare-drivers'),
     path('', home, name='compare')
 ]
